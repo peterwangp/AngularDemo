@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" class="app-header">
+  <div><a class="positronx">User Registration</a></div>
+
+  <span class="nav-tool-items">
+    <span class="form-inline">
+      <select
+        class="form-control"
+        #langauge
+        (change)="translateSite(langauge.value)"
+      >
+        <option
+          *ngFor="let localization of translateService.getLangs()"
+          [value]="localization">
+          {{ localization }}
+        </option>
+      </select>
+    </span>
+
+    <a
+      mat-button
+
+      routerLink="register"
+      routerLinkActive="active"
+      >{{'Title2' | translate}}</a
+    >
+  </span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

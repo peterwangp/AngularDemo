@@ -1,0 +1,96 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>{{'Title1' | translate}} </mat-card-title>
+      </mat-card-header>
+  
+    <form class="form-horizontal" role="form" #f="ngForm" (ngSubmit)="f.form.valid && onformsubmit()"  >
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="usermodel.firstname"
+              name="firstname"
+              #firstname="ngModel"
+              placeholder="{{'First Name' | translate}}"
+              class="form-control" />
+  
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="usermodel.lastname"
+              name="lastname"
+              #lastname="ngModel"
+              placeholder="{{'Last Name' | translate}}"
+              class="form-control"  />
+  
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput type="email" name="useremail" placeholder="{{'Email' | translate}}"
+            [(ngModel)]="usermodel.useremail"
+            [ngClass]="{'invalid-data': useremail.invalid && f.touched,
+                        'valid-data': useremail.valid && f.submitted }"
+            #useremail="ngModel"
+            class="form-control"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+             required    />
+  
+             <mat-error *ngIf="(useremail.invalid && f.touched) || (useremail.invalid && f.submitted) || useremail.dirty">
+              <span style="color: red;" class="text-danger" 
+              *ngIf="useremail.errors?.['required']">{{'Error 1' | translate}}</span>
+              <span style="color: red;" class="text-danger" 
+              *ngIf="useremail.errors?.['pattern']">{{'Error 1a' | translate}}</span>
+            </mat-error>
+            </mat-form-field>
+
+  
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="usermodel.postcode"
+              [ngClass]="{'invalid-data': postcode.invalid && f.touched,
+                          'valid-data': postcode.valid && f.submitted }"
+              name="postcode"
+              #postcode="ngModel"
+              placeholder="{{'Post Code' | translate}}"
+              class="form-control" pattern="^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$"
+              required />
+  
+            <mat-error *ngIf="(postcode.invalid && f.touched) || (postcode.invalid && f.submitted) || postcode.dirty">
+              <span style="color: red;" class="text-danger" 
+              *ngIf="postcode.errors?.['required']">{{'Error 2' | translate}}</span>
+              <span style="color: red;" class="text-danger" 
+              *ngIf="postcode.errors?.['pattern']">{{'Error 2a' | translate}}</span>
+            </mat-error>
+  
+          </mat-form-field>
+  
+        </mat-card-content>
+        <button
+          type="submit"
+          mat-stroked-button
+          color="accent"
+          class="btn-block"
+          class="btn btn-primary"
+          style="margin: 4px"
+        >
+        {{'Save' | translate}}
+        </button>
+        <button
+          type="reset"
+          mat-stroked-button
+          color="accent"
+          class="btn-block"
+          class="btn btn-default"
+        >
+        {{'Reset' | translate}}
+        </button>
+      </form>
+    </mat-card>
+  </div>
+  

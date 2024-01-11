@@ -1,0 +1,18 @@
+{
+  "Title1":"Registration-FR",
+
+  "Title2":"MCCS-FR",
+
+  "First Name" :"Firstname-FR",
+  "Last Name" :"Lastname-FR",
+  "Email" :"Email-FR",
+  "Post Code" :"Post Code - FR",
+
+  "Error 1":"Email address is required - FR",
+  "Error 1a":"Email address is invalid - FR",
+  "Error 2":"Postcode is required - FR",
+  "Error 2a":"Postcode is invalid - FR",
+
+  "Save":"Save - FR",
+  "Reset":"Reset - FR"
+}

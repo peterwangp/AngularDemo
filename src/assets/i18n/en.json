@@ -1,0 +1,17 @@
+{
+    "Title1":"Registration",
+    "Title2":"MCCS",
+
+    "Firstname" :"First Name",
+    "Lastname" :"Last Name",
+    "Email" :"Email",
+    "Post Code" :"Post Code",
+  
+    "Error 1":"Email address is required",
+    "Error 1a":"Email address is invalid",
+    "Error 2":"Postcode is required",
+    "Error 2a":"Postcode is invalid",
+  
+    "Save":"Save",
+    "Reset":"Reset"
+  }
